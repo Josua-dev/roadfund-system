@@ -6,6 +6,7 @@ import api from '../utils/api';
 import { useRegions } from '../hooks/useRegions';
 import { Panel, SeverityTag, StatusTag } from '../components/common';
 import { formatDate, issueTypeConfig } from '../utils/helpers';
+import type { IssueType } from '../types';
 
 let L: any;
 const sevColor: Record<string, string> = { low: '#3C5E78', medium: '#A8762E', high: '#8A4A1E', critical: '#963B3B' };
@@ -95,7 +96,7 @@ export default function MapView() {
             </div>
             <div className="panel-body">
               <div style={{ display: 'flex', gap: 6, marginBottom: 14 }}><SeverityTag severity={selected.severity} /><StatusTag status={selected.status} /></div>
-              {[['Type', issueTypeConfig[selected.issue_type]?.label], ['Region', selected.region_name], ['Date', formatDate(selected.created_at)]].map(([l, v]) => (
+              {[['Type', issueTypeConfig[selected.issue_type as IssueType]?.label], ['Region', selected.region_name], ['Date', formatDate(selected.created_at)]].map(([l, v]) => (
                 <div key={l as string} style={{ display: 'flex', gap: 8, fontSize: '0.8rem', marginBottom: 7 }}><span style={{ width: 50, color: 'var(--text-3)' }}>{l}</span><span>{v}</span></div>
               ))}
               <Link to={`/dashboard/reports/${selected.id}`} className="btn btn-cta" style={{ width: '100%', justifyContent: 'center', marginTop: 6 }}>View Full Report</Link>

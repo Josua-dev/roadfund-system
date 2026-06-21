@@ -5,6 +5,7 @@ import { Panel, PanelHeader, KpiTile, StatusTag, SeverityTag, Skel } from '../..
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { ArrowRight, FileText } from 'lucide-react';
 import { timeAgo, issueTypeConfig, truncate } from '../../utils/helpers';
+import type { IssueType } from '../../types';
 
 const PIE_COLORS = ['#28384A', '#3C7A5C', '#A8762E', '#3C5E78', '#963B3B', '#5C4A78', '#807C73'];
 
@@ -121,7 +122,7 @@ export default function AdminDashboard() {
                     <div style={{ fontWeight: 600 }}>{truncate(r.title, 38)}</div>
                     <div className="text-mono" style={{ color: 'var(--text-3)', fontSize: '0.7rem' }}>{r.report_number}</div>
                   </td>
-                  <td style={{ color: 'var(--text-2)' }}>{issueTypeConfig[r.issue_type]?.label}</td>
+                  <td style={{ color: 'var(--text-2)' }}>{issueTypeConfig[r.issue_type as IssueType]?.label}</td>
                   <td><SeverityTag severity={r.severity} /></td>
                   <td><StatusTag status={r.status} /></td>
                   <td style={{ color: 'var(--text-2)' }}>{r.region_name || '—'}</td>

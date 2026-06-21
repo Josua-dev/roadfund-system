@@ -4,6 +4,7 @@ import api from '../../utils/api';
 import { Panel, PanelHeader, StatRow, SeverityTag, StatusTag, Skel, Empty } from '../../components/common';
 import { Eye, CheckCircle, ClipboardCheck } from 'lucide-react';
 import { timeAgo, issueTypeConfig, truncate } from '../../utils/helpers';
+import type { IssueType } from '../../types';
 
 /**
  * Inspector's job is triage, not overview. The layout is a WORKLIST
@@ -50,7 +51,7 @@ export default function InspectorDashboard() {
                     <td style={{ width: 22 }}><span style={{ width: 6, height: 6, borderRadius: '50%', background: r.severity === 'critical' ? 'var(--error)' : 'var(--n-300)', display: 'inline-block' }} /></td>
                     <td>
                       <div style={{ fontWeight: 600 }}>{truncate(r.title, 42)}</div>
-                      <div className="text-mono" style={{ fontSize: '0.7rem', color: 'var(--text-3)' }}>{r.report_number} · {issueTypeConfig[r.issue_type]?.label}</div>
+                      <div className="text-mono" style={{ fontSize: '0.7rem', color: 'var(--text-3)' }}>{r.report_number} · {issueTypeConfig[r.issue_type as IssueType]?.label}</div>
                     </td>
                     <td style={{ color: 'var(--text-2)' }}>{r.region_name || '—'}</td>
                     <td><SeverityTag severity={r.severity} /></td>
