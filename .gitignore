@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment files (NEVER commit secrets)
+.env
+.env.local
+*/.env
+!*/.env.example
+
+# Build output
+frontend/dist/
+frontend/.vite/
+
+# Uploaded files (user content, not code)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor junk
+.DS_Store
+.vscode/
+*.swp

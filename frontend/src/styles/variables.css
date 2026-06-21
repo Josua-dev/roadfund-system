@@ -1,0 +1,80 @@
+/* ════════════════════════════════════════════════════════════
+   RFA Design Tokens — Road Fund Administration Namibia
+   Palette source: rfanam.com.na
+   ════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Brand ─────────────────────────────────────────────── */
+  --navy:           #142B57;
+  --navy-dark:      #0d1e3e;
+  --navy-mid:       #1e3f75;
+  --navy-light:     #2a5298;
+  --navy-muted:     #e8edf5;
+
+  --green:          #00B26D;
+  --green-dark:     #008f57;
+  --green-light:    #00cc7d;
+  --green-muted:    #e6f9f2;
+
+  /* ── Neutrals ───────────────────────────────────────────── */
+  --white:          #ffffff;
+  --grey-50:        #F5F6F8;
+  --grey-100:       #eceef2;
+  --grey-200:       #d8dce5;
+  --grey-300:       #b8bfcc;
+  --grey-400:       #8f98aa;
+  --grey-500:       #64738a;
+  --grey-600:       #4a566a;
+  --grey-700:       #334155;
+  --grey-800:       #1e2d40;
+  --grey-900:       #0f1a27;
+
+  /* ── Semantic ───────────────────────────────────────────── */
+  --success:        #00B26D;
+  --success-bg:     #e6f9f2;
+  --warning:        #f59e0b;
+  --warning-bg:     #fffbeb;
+  --danger:         #e53e3e;
+  --danger-bg:      #fff5f5;
+  --info:           #3182ce;
+  --info-bg:        #ebf8ff;
+
+  /* ── Surface ────────────────────────────────────────────── */
+  --bg-page:        #F5F6F8;
+  --bg-card:        #ffffff;
+  --bg-sidebar:     #142B57;
+  --bg-header:      #ffffff;
+
+  /* ── Text ───────────────────────────────────────────────── */
+  --text-primary:   #142B57;
+  --text-secondary: #64738a;
+  --text-muted:     #8f98aa;
+  --text-on-dark:   #ffffff;
+  --text-on-green:  #ffffff;
+
+  /* ── Border ─────────────────────────────────────────────── */
+  --border:         #e2e6ed;
+  --border-focus:   #00B26D;
+
+  /* ── Shadow ─────────────────────────────────────────────── */
+  --shadow-sm:   0 1px 3px rgba(20,43,87,0.06), 0 1px 2px rgba(20,43,87,0.04);
+  --shadow-md:   0 4px 12px rgba(20,43,87,0.08), 0 2px 4px rgba(20,43,87,0.05);
+  --shadow-lg:   0 10px 30px rgba(20,43,87,0.10), 0 4px 8px rgba(20,43,87,0.06);
+  --shadow-xl:   0 20px 50px rgba(20,43,87,0.14), 0 8px 16px rgba(20,43,87,0.08);
+
+  /* ── Radius ─────────────────────────────────────────────── */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   18px;
+  --radius-2xl:  24px;
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  --sidebar-w:   260px;
+  --header-h:    64px;
+  --content-max: 1280px;
+
+  /* ── Transition ─────────────────────────────────────────── */
+  --ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --duration:    180ms;
+}
