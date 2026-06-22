@@ -36,12 +36,19 @@ app.use(helmet({
 
 // ── CORS ─────────────────────────────────────────────────────
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || process.env.FRONTEND_URL || 'http://localhost:5173')
-  .split(',').map(o => o.trim());
+  .split(',')
+  .map(o => o.trim().replace(/\/$/, '').toLowerCase())
+  .filter(Boolean);
+
+console.log('CORS allowed origins:', JSON.stringify(allowedOrigins));
 
 app.use(cors({
   origin: (origin, cb) => {
-    if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
-    cb(new Error(`CORS blocked: ${origin}`));
+    if (!origin) return cb(null, true);
+    const normalized = origin.trim().replace(/\/$/, '').toLowerCase();
+    if (allowedOrigins.includes(normalized)) return cb(null, true);
+    console.warn('CORS blocked origin:', JSON.stringify(origin), '— allowed:', JSON.stringify(allowedOrigins));
+    return cb(null, false);
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
